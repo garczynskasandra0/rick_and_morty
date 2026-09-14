@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: geneva;
+    background: #1b1b1b;
+    color: rgb(190, 172, 172);
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+}
+
+header h1 {
+    margin: 0;
+    color: #2d8d60;
+    font-size: 40px;
+}
+
+header p {
+    color: #ccc;
+}
+
+/*  KOMUNIKAT  */
+
+#message {
+    text-align: center;
+    margin: 30px;
+    font-size: 20px;
+}
+
+/*  LISTA POSTACI  */
+
+#characters {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: 25px;
+}
+
+/*  KARTA */
+
+.character {
+    background: #2b2b2b;
+    border-radius: 15px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.character:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 5px 20px rgba(0, 255, 136, 0.3);
+}
+
+.character img {
+    width: 100%;
+    display: block;
+}
+
+.character-info {
+    padding: 15px;
+}
+
+.character-info h2 {
+    margin-top: 0;
+    color: #34ce86;
+}
+
+.character-info p {
+    color: white;
+}
+
+/*  STATUS  */
+
+.alive {
+    color: #4ce09b;
+}
+
+.dead {
+    color: #af2222;
+}
+
+.unknown {
+    color:  rgb(80, 80, 135);
+}
+
+/*  PAGINACJA  */
+
+#pagination {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
+}
+
+#pagination button,
+.back-button {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: #55e2a1;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#pagination button:hover:not(:disabled),
+.back-button:hover {
+    background: #00cc6a;
+}
+
+#pagination button:disabled {
+    background: #555;
+    color: #999;
+
+    cursor: not-allowed;
+}
+
+/*  SZCZEGÓŁY  */
+
+.details {
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: #2b2b2b;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    gap: 30px;
+}
+
+.details img {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 10px;
+}
+
+.details-info {
+    flex: 1;
+}
+
+.details-info h1 {
+    color: #00ff88;
+}
+
+.details-info p {
+    font-size: 18px;
+}
+
+/*  RESPONSIVE  */
+
+@media (max-width: 700px) {
+
+    .details {
+        margin: 20px;
+
+        flex-direction: column;
+    }
+
+    .details img {
+        width: 100%;
+        height: auto;
+    }
+}
